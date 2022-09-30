@@ -12,100 +12,120 @@ range 1 to 3.
 
 
 
+
+
 import java.lang.Math;
 
 //base class
+
 class Medicine {
 
-public void displayLabel(){
-System.out.println("  The   MLI  (MedLabIn) \n\tBangalore");
-
+public void displayLabel() {
+System.out.println(" \n The   MLI  (MedLabIn) \n\tBangalore\n");
 }
 }
 
 
 
-//class Tablet inheriting Medicine
-class Tablet extends Medicine{
+// class Tablet inheriting Medicine
 
-// will @override
-public void displayLabel(){
+class Tablet extends Medicine {
+ // will override
+public void displayLabel() {
 
-System.out.println("\nTablets should be kept in a cool dry place, not to be placed in direct sunlight.");
-//displayLabel() for Tablet class, will @override the Medicine method.
+System.out.println("\nTablets should be kept in a cool dry place, not to be placed in direct sunlight\n");
+// displayLabel() for Tablet class, will override the Medicine method.
 
-}
-
-}
-
-
-
-//class Syrup inheriting Medicine
-class Syrup extends Medicine{
-
-//will @override
-public void displayLabel(){
-System.out.println("\nThis syrup is not for children, should be taken as informed by the physician");
 }
 
 }
 
 
 
-//class Ointment inheriting Medicine
-class Ointment extends Medicine{
 
-public void displayLabel(){
-System.out.println("\nOintment is for external use only. Once used, keep the seal tightly closed");
+
+// class Syrup inheriting Medicine
+
+class Syrup extends Medicine {
+
+// will override
+public void displayLabel() {
+System.out.println("\nThis syrup is not for children, should be taken as informed by the physician\n");
 }
 
 }
 
 
 
-//main funtion class
 
-class TestMedicine{
-public static void main(String[] args){
 
-//created base class object
+// class Ointment inheriting Medicine
+
+class Ointment extends Medicine {
+
+public void displayLabel() {
+System.out.println("\nOintment is for external use only. Once used, keep the seal tightly closed\n");
+}
+
+}
+
+
+
+
+
+
+// main funtion class
+
+class TestMedicine {
+public static void main(String[] args) {
+
+System.out.println("\nThe randomly generated objects\n");
+
+boolean med = false, t = false, s = false, o = false;
+int counter = 0;
+
+
+while (counter < 4) {
+
+int random = (int) (Math.random() * (4 - 1 + 1) + 1);
+
+if (random == 1 && med != true) 
+{
 Medicine m = new Medicine();
+System.out.println("\n***The Base class Medicine object created and displayLabel has been called.***\n");
 m.displayLabel();
-
-//created Tablet object t overriding base class's method
-Tablet t = new Tablet();
-t.displayLabel();
-
-//created Syrup object s overriding base class's method
-Syrup s = new Syrup();
-s.displayLabel();
-
-//created Ointment object o overriding base class's method
-Ointment o = new Ointment();
-o.displayLabel();
-
-
-
-//Now generating randomly generated integer based objects for each classes.
-
-System.out.println("\nThe randomly generated object\n");
-
-int random = (int)(Math.random()*(3-1+1)+1);
-
-if(random == 1){
+med = true;
+counter++;
+}
+else if (random == 2 && t != true)
+{
 Tablet t1 = new Tablet();
+System.out.println("\n***The child class Tablet object created and displayLabel has been called.***\n");
 t1.displayLabel();
-}else if(random == 2){
+t = true;
+counter++;
+}
+else if (random == 3 && s != true)
+{
 
 Syrup s1 = new Syrup();
+System.out.println("\n***The child class Syrup object created and displayLabel has been called.***\n");
 s1.displayLabel();
+s = true;
+counter++;
 
-
-}else if(random == 3){
+}
+else if (random == 4 && o != true)
+{
 Ointment o1 = new Ointment();
+System.out.println("\n***The child class Ointment object created and displayLabel has been called.***\n");
 o1.displayLabel();
+o = true;
+counter++;
 }
 
+
+}
 
 }
 }
