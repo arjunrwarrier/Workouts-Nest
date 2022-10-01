@@ -7,7 +7,7 @@ parameters.
 
 
 class Rectangle{
-int length= 2, breadth= 5;
+int length=2, breadth=5;
 
 //initialisation
 Rectangle(){
@@ -55,7 +55,7 @@ Rectangle r2= new Rectangle(3);    //overloading with one value
 r2.getArea();
 r2.getPerimeter();
 
-Rectangle r3= new Rectangle(4,5);   //overloading with two value
+Rectangle r3= new Rectangle(4,6);   //overloading with two value
 r3.getArea();
 r3.getPerimeter();
 
