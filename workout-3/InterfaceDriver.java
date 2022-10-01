@@ -77,6 +77,7 @@ System.out.println(e1.toString());
 catch(InputMismatchException e2)
 {
 System.out.println("\nException Handled");
+System.out.println("\nFees should be an integer"):
 System.out.println(e2.toString());
 }
 //final block 
